@@ -55,7 +55,7 @@ export default function App() {
           <Routes>
             <Route path="/home" element={<HomePage />} />
             <Route path="/images" element={<ImagesPage />} />
-            <Route path="/facts" element={<FactsPage />} />
+            <Route path="/bored" element={<FactsPage />} />
           </Routes>
           </nav>
         </div>
