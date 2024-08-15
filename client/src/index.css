@@ -1,0 +1,31 @@
+body {
+  background-color: gray;
+}
+
+h2 {
+  text-decoration: solid underline;
+  font-size: 30px;
+  font-family: "Jacquard 12", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p {
+  font-family: "Sedan SC", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+button {
+  cursor: pointer;
+  font-family: "Sedan SC", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.game {
+  font-family: "Tiny5", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  font-style: normal;
+}
