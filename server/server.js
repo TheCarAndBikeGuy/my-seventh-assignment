@@ -14,17 +14,17 @@ app.get("/", function (request, response) {
   response.json("ahhhhh");
 });
 
-app.get("/game", async function (request, response) {
-  const data = await db.query(`SELECT * FROM game`);
+app.get("/games", async function (request, response) {
+  const data = await db.query(`SELECT * FROM games`);
   response.json(data.rows);
 });
 
-app.post("/game", async function (request, response) {
+app.post("/games", async function (request, response) {
   const name = request.body.name;
   const creator = request.body.creator;
   const rating = request.body.rating;
   await db.query(
-    `INSERT INTO game (name, creator, rating) VALUES ($1, $2, $3)`,
+    `INSERT INTO games (name, creator, rating) VALUES ($1, $2, $3)`,
     [name, creator, rating]
   );
   response.json("games POST endpoint");

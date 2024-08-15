@@ -1,31 +1,168 @@
-body {
-  background-color: gray;
+/* The Page */
+
+html {
+  scroll-behavior: smooth;
 }
+
+body {
+  background-color: lightgrey;
+}
+
+/* Title */
+.home {
+  text-decoration: none;
+}
+
+nav a {
+  display: flex;
+  margin: 0 auto;
+  margin-right: 20px;
+  color: #000000;
+  text-decoration: none;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  transition: 0.5s;
+  color: darkred;
+}
+
 
 h2 {
   text-decoration: solid underline;
+  font-family: "Sedan SC", system-ui;
+  font-style: normal;
   font-size: 30px;
-  font-family: "Jacquard 12", system-ui;
-  font-weight: 400;
-  font-style: normal;
+  font-weight: bold;
 }
 
-p {
-  font-family: "Sedan SC", system-ui;
-  font-weight: 400;
-  font-style: normal;
+h4 {
+  text-align: center;
 }
 
-button {
-  cursor: pointer;
-  font-family: "Sedan SC", system-ui;
-  font-weight: 400;
-  font-style: normal;
+/* Images */
+.images {
+  width: 150px;
+  padding: 5px;
 }
 
-.game {
+/* Input Field */
+
+.name {
   font-family: "Tiny5", sans-serif;
   font-weight: 400;
   font-size: 24px;
   font-style: normal;
+  width: 150px;
+  text-align: center;
+  margin: 5px;
+  border-radius: 15px;
+  background-image: url("./images/id-card.png");
+  background-position: 10px 7px;
+  background-size: 15px;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  width: 100px;
+  align-self: center;
+}
+
+.creator {
+  font-family: "Tiny5", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  font-style: normal;
+  width: 150px;
+  align-self: center;
+  text-align: center;
+  margin: 5px;
+  border-radius: 15px;
+  background-image: url("./images/innovator.png");
+  background-position: 10px 7px;
+  background-size: 15px;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  width: 110px;
+  align-self: center;
+}
+
+.rating {
+  font-family: "Tiny5", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  background-color: white;
+  background-image: url("./images/star.png");
+  background-position: 10px 10px;
+  background-size: 11px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  width: 35px;
+  align-self: center;
+  margin: 5px;
+  border-radius: 15px;
+}
+
+.submit {
+  cursor: pointer;
+  font-family: "Tiny5", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  border-radius: 15px;
+  width: 75px;
+}
+
+p {
+  text-decoration: solid underline;
+  font-family: "Sedan SC", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+}
+
+/* Input Answers */
+
+.games {
+  font-family: "Tiny5", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  font-style: normal;
+  width: 450px;
+  text-align: center;
+  border: solid 2px black;
+}
+
+.dislikeBtn {
+  background-image: url("./images/dislike.png");
+  background-position: 7px 5px;
+  background-size: 11px;
+  background-repeat: no-repeat;
+  padding-left: 25px;
+  width: 40px;
+  align-self: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.dislikeBtn:hover {
+  background-color: lightcoral;
+  color: black;
+}
+
+
+.likeBtn {
+  background-image: url("./images/like.png");
+  background-position: 7px 3px;
+  background-size: 11px;
+  background-repeat: no-repeat;
+  padding-left: 25px;
+  width: 40px;
+  align-self: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.likeBtn:hover {
+  background-color: lightblue;
+  color: black;
 }

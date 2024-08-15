@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import LikeButton from "./comp/LikeButton";
+import DislikeButton from "./comp/DislikeButton";
+import { ImagesPage } from "./comp/Images";
+import { HomePage } from "./comp/HomePage";
+import { FactsPage } from "./comp/Facts";
 
 export default function App() {
-  const [game, setGame] = useState([]);
+  const [games, setGames] = useState([]);
   const [form, setForm] = useState({
     name: "",
     creator: "",
@@ -9,13 +15,13 @@ export default function App() {
   });
 
   useEffect(() => {
-    getGame();
+    getGames();
   }, []);
 
-  async function getGame() {
-    const response = await fetch("http://localhost:8080/game");
+  async function getGames() {
+    const response = await fetch("http://localhost:8080/games");
     const data = await response.json();
-    setGame(data);
+    setGames(data);
   }
 
   function handleChange(event) {
@@ -29,7 +35,7 @@ export default function App() {
     event.preventDefault();
     console.log("form is entered");
     console.log(form);
-    await fetch("http://localhost:8080/game", {
+    await fetch("http://localhost:8080/games", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -37,16 +43,29 @@ export default function App() {
       body: JSON.stringify(form),
     });
     setForm({ name: "", creator: "", rating: 0 });
-    getGame();
+    getGames();
   }
 
   return (
     <div>
+      <BrowserRouter>
+        <div className="App">
+          <nav>
+            <Link className="home" to="/home">Home</Link> 
+          <Routes>
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/images" element={<ImagesPage />} />
+            <Route path="/facts" element={<FactsPage />} />
+          </Routes>
+          </nav>
+        </div>
+      </BrowserRouter>
       <h2>What is your favourite game?</h2>
 
       <h2>Add Your Favourite Game</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form">
         <input
+          className="name"
           name="name"
           placeholder="Name"
           tabIndex={0}
@@ -55,6 +74,7 @@ export default function App() {
           value={form.name}
         />
         <input
+          className="creator"
           name="creator"
           placeholder="Creator"
           tabIndex={0}
@@ -63,23 +83,26 @@ export default function App() {
           value={form.creator}
         />
         <input
+          className="rating"
           name="rating"
-          placeholder="Rating Out Of 10"
+          placeholder="0"
           tabIndex={0}
           title="Rating Out Of 10"
           type="number"
           onChange={handleChange}
           value={form.rating}
         />
-        <button className="btn">Submit</button>
+        <button className="submit" tabIndex={0} title="Submit">
+          Submit
+        </button>
       </form>
 
-      <h2>🎮Games🎮</h2>
       <p>Here Are Your Replies!</p>
-      {game.map(function (game) {
+      {games.map(function (games) {
         return (
-          <h3 className="game" key={game.name}>
-            {game.name} - {game.creator} - {game.rating}/10
+          <h3 className="games" key={games.name}>
+            {games.name} - {games.creator} - {games.rating}/10 <LikeButton />
+            <DislikeButton />
           </h3>
         );
       })}
