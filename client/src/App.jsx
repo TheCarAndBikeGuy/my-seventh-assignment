@@ -51,12 +51,14 @@ export default function App() {
       <BrowserRouter>
         <div className="App">
           <nav>
-            <Link className="home" to="/home">Home</Link> 
-          <Routes>
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/images" element={<ImagesPage />} />
-            <Route path="/bored" element={<FactsPage />} />
-          </Routes>
+            <Link className="home" to="/home">
+              <h1>Home</h1>
+            </Link>
+            <Routes>
+              <Route path="/home" element={<HomePage />} />
+              <Route path="/images" element={<ImagesPage />} />
+              <Route path="/bored" element={<FactsPage />} />
+            </Routes>
           </nav>
         </div>
       </BrowserRouter>
@@ -106,6 +108,14 @@ export default function App() {
           </h3>
         );
       })}
+      <br />
+      <footer>
+        <div id="footer">
+          <div class="copyright">
+            <h5>&copy; Copyright Noah</h5>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

@@ -9,43 +9,65 @@ body {
 }
 
 /* Title */
-.home {
-  text-decoration: none;
+h1 {
+  color: #000;
+}
+
+header {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  padding: 2.5px 1px;
+  gap: 5px;
+  border: solid black 2px;
+  background-color: #fff;
+  justify-content: center;
 }
 
 nav a {
-  display: flex;
-  margin: 0 auto;
+  display: inline;
   margin-right: 20px;
-  color: #000000;
+  padding: 20px;
+  color: #000;
   text-decoration: none;
   align-items: center;
-  flex-wrap: wrap;
+  text-align: center;
 }
 
 nav a:hover {
   text-decoration: underline;
-  transition: 0.5s;
-  color: darkred;
+  transition: 1s;
 }
 
-
+/* Other Title */
 h2 {
   text-decoration: solid underline;
   font-family: "Sedan SC", system-ui;
   font-style: normal;
   font-size: 30px;
   font-weight: bold;
+  text-align: center;
 }
 
+/* Games If You are Bored */
+h4 {
+  text-align: center;
+}
 
 /* Images */
 .images {
+  margin: 0 auto;
+  display: flex;
   width: 150px;
   padding: 5px;
+  align-items: center;
+  align-self: center;
 }
 
 /* Input Field */
+.form {
+  text-align: center;
+}
 
 .name {
   font-family: "Tiny5", sans-serif;
@@ -100,6 +122,8 @@ h2 {
   border-radius: 15px;
 }
 
+/* Submit Button */
+
 .submit {
   cursor: pointer;
   font-family: "Tiny5", sans-serif;
@@ -109,12 +133,20 @@ h2 {
   width: 75px;
 }
 
+.submit:hover {
+  transition: 1s;
+  background-color: black;
+  color: white;
+}
+
+/* Here Are Your Replies */
 p {
   text-decoration: solid underline;
   font-family: "Sedan SC", system-ui;
   font-weight: 400;
   font-style: normal;
   font-size: 25px;
+  text-align: center;
 }
 
 /* Input Answers */
@@ -127,7 +159,17 @@ p {
   width: 450px;
   text-align: center;
   border: solid 2px black;
+  margin: 0 auto;
+  padding: 10px;
+  align-items: center;
 }
+
+.games:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Dislike And Like Buttons */
 
 .dislikeBtn {
   background-image: url("./images/dislike.png");
@@ -146,7 +188,6 @@ p {
   color: black;
 }
 
-
 .likeBtn {
   background-image: url("./images/like.png");
   background-position: 7px 3px;
@@ -162,4 +203,16 @@ p {
 .likeBtn:hover {
   background-color: lightblue;
   color: black;
+}
+
+/* Footer */
+
+.copyright {
+  width: 100vw;
+  height: 75px;
+  text-align: center;
+  padding: 5px 0px;
+  margin-bottom: auto;
+  background: #a1b0ab;
+  color: #000;
 }

@@ -74,6 +74,7 @@
     border-radius: 10px;
   }
 
+  /* Submit Button */
   .submit {
     height: 20px;
     width: 75px;
@@ -90,6 +91,7 @@
     color: white;
   }
 
+  /* Here Are Your Replies */
   p {
     text-decoration: solid underline;
     font-family: "Sedan SC", system-ui;
